@@ -1,0 +1,53 @@
+Comentaris generals.
+
+Et recomano que acostumis a posar "return"'s al final de les funcions. És el mateix :
+
+  def funcio_exemple(a,b)
+      print(a+b)
+      return
+
+que
+
+    def funcio_exemple(a,b)
+      print(a+b)
+
+Les dues funcions retornen un "None". Perquè et dic això? Quan llegeixis el codi, els return et marquen clarament els finals de les funcions. Per altra banda, relacionat amb això, vigila perquè a l'exercici 1
+la funció 
+
+      def cancollarga(self):
+        mesgran = 0
+        vencedor = ""
+        for i in self.song_lista:
+            if i.durada > mesgran:
+                mesgran = i.durada
+                vencedor = i
+
+No mostra la cançó més llarga ni el temps que dura en cap moment.  
+Falta o bé mostrar la informació (amb un print), o bé retornar aquesta informació (return vencedor) per poder utilitzar la informació fora de la funció.
+
+Exercici 1. 5/5
+
+
+Exercici 2: 4/5
+(A) Funció atacar: falta  un else on restis l'atac a la vida de l'enemic (enemic.vida = enemic.vida - self.força)
+    def atacar(self, enemic):
+        if enemic.vida <= self.força:
+            enemic.vida = 0
+(B) Falta la funció esta_viu() que et retorna True o False si està viu o mort respectivament.
+
+(C) Fixa't:
+
+  while hero.vida > 0 and monstre.vida > 0:
+        hero.atacar(monstre)
+        if monstre.vida > 0:
+            monstre.atacar(hero)
+        print("Saguim en peu")
+
+if hero.vida <= 0 or monstre.vida <= 0: -------------------------------> AQUEST IF ÉS INNECESSARI. Si o si, sempre entraràs aquí dins perquè has sortit del while perquè hero.vida <= o bé monstre.vida <=0.
+    print("Fi del combat!")
+    if hero.vida <= 0:
+        print(f"{hero.nom} ha estat derrotat.")
+    else:
+        print(f"{monstre.nom} ha estat derrotat.")
+
+Nota final: 9/10
